@@ -231,6 +231,17 @@ footer {
     margin-bottom: 0.5rem;
 }
 
+/* Mobile menu button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
 @media screen and (max-width: 768px) {
     .timeline::after {
         left: 31px;
@@ -254,10 +265,44 @@ footer {
         left: 0;
     }
     
+    /* Mobile Navigation Improvements */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+    }
+    
+    nav {
+        padding: 0.5rem;
+    }
+    
     nav ul {
         flex-direction: column;
-        gap: 0.5rem;
-        align-items: center;
+        gap: 0;
+        align-items: stretch;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+    
+    nav.open ul {
+        max-height: 300px;
+    }
+    
+    nav li {
+        margin: 0;
+        border-bottom: 1px solid #333;
+    }
+    
+    nav li:last-child {
+        border-bottom: none;
+    }
+    
+    nav a {
+        padding: 0.75rem 1rem;
+        display: block;
+        text-align: center;
     }
     
     .innovator-profile {
@@ -281,10 +326,6 @@ footer {
     .innovator-profile img {
         width: 120px;
         height: 120px;
-    }
-    
-    nav ul {
-        gap: 0.25rem;
     }
     
     .hero {
