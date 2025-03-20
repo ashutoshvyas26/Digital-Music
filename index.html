@@ -13,21 +13,32 @@
         <p>A Technological Revolution That Changed How We Create and Consume Music</p>
     </header>
     
-    <nav id="mainNav">
-        <button class="menu-toggle" id="menuToggle">
-            <i class="fas fa-bars"></i>
-        </button>
-        <ul>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#what-is">What Is Digital Music?</a></li>
-            <li><a href="#innovators">Key Innovators</a></li>
-            <li><a href="#timeline">Timeline</a></li>
-            <li><a href="#impact">Social Impact</a></li>
-            <li><a href="#team">Group</a></li>
-            <li><a href="#references">References</a></li>
+    <!-- Add this button at the top of the body, before the header -->
+<button id="sideNavToggle" class="side-nav-toggle">
+    <i class="fas fa-bars"></i>
+</button>
 
-        </ul>
-    </nav>
+<!-- Modify the existing nav element -->
+<nav id="mainNav" class="side-nav">
+    <div class="nav-header">
+        <h3>Digital Music</h3>
+        <button class="close-nav">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#what-is">What Is Digital Music?</a></li>
+        <li><a href="#innovators">Key Innovators</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#impact">Social Impact</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#references">References</a></li>
+    </ul>
+</nav>
+
+<!-- Add this overlay that appears when side nav is open -->
+<div id="overlay" class="overlay"></div>
     
     <div class="hero">
         <h1>From Vinyl to Streaming</h1>
@@ -290,5 +301,36 @@
         <p>© 2025 Digital Music Technology - Educational Website</p>
         <p>Digital Thinking | Prototype Version</p>
     </footer>
+
+
+
+    <script>
+        // Get elements
+        const sideNavToggle = document.getElementById('sideNavToggle');
+        const sideNav = document.getElementById('mainNav');
+        const closeNav = document.querySelector('.close-nav');
+        const overlay = document.getElementById('overlay');
+        const navLinks = sideNav.querySelectorAll('a');
+        
+        // Open side navigation
+        sideNavToggle.addEventListener('click', () => {
+            sideNav.classList.add('open');
+            overlay.classList.add('open');
+        });
+        
+        // Close side navigation
+        function closeNavigation() {
+            sideNav.classList.remove('open');
+            overlay.classList.remove('open');
+        }
+        
+        closeNav.addEventListener('click', closeNavigation);
+        overlay.addEventListener('click', closeNavigation);
+        
+        // Close navigation when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeNavigation);
+        });
+    </script>
 </body>
 </html>
