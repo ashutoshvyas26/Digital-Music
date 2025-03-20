@@ -13,12 +13,12 @@
         <p>A Technological Revolution That Changed How We Create and Consume Music</p>
     </header>
     
-    <!-- Add this button at the top of the body, before the header -->
+
 <button id="sideNavToggle" class="side-nav-toggle">
     <i class="fas fa-bars"></i>
 </button>
 
-<!-- Modify the existing nav element -->
+
 <nav id="mainNav" class="side-nav">
     <div class="nav-header">
         <h3>Digital Music</h3>
@@ -31,13 +31,13 @@
         <li><a href="#what-is">What Is Digital Music?</a></li>
         <li><a href="#innovators">Key Innovators</a></li>
         <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#video-explanation">Video Explanation</a></li>
         <li><a href="#impact">Social Impact</a></li>
         <li><a href="#team">Team</a></li>
         <li><a href="#references">References</a></li>
     </ul>
 </nav>
 
-<!-- Add this overlay that appears when side nav is open -->
 <div id="overlay" class="overlay"></div>
     
     <div class="hero">
@@ -68,6 +68,8 @@
             
             <p>This digital representation allows for unprecedented flexibility in how music can be manipulated, stored, and distributed. Unlike analog recordings (such as vinyl records or cassette tapes), digital music doesn't degrade with repeated use, can be perfectly copied an unlimited number of times, and can be easily edited, processed, and transmitted across global networks.</p>
         </section>
+
+        
         
         <section id="innovators">
             <h2>Key Innovators in Digital Music Technology</h2>
@@ -211,6 +213,17 @@
                 </div>
             </div>
         </section>
+
+        <section id="video-explanation">
+            <h2>Streaming the Future: The Digital Music Shift</h2>
+            <p>Watch this video for a more in-depth explanation of the evolution of digital music technology.</p>
+            
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/-bVketPj5to?si=yqFPXYUMkFQF2npy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            
+            <p class="video-caption">This video explores how digital music technology has transformed the music industry and influenced cultural trends over the decades.</p>
+        </section>
         <section id="impact">
             <h2>Social Impact of Digital Music Technology</h2>
             
@@ -299,26 +312,26 @@
     
     <footer>
         <p>© 2025 Digital Music Technology - Educational Website</p>
-        <p>Digital Thinking | Prototype Version</p>
+        <p>Digital Thinking | Tracking Innovation Multimedia Project</p>
     </footer>
 
 
 
     <script>
-        // Get elements
+        
         const sideNavToggle = document.getElementById('sideNavToggle');
         const sideNav = document.getElementById('mainNav');
         const closeNav = document.querySelector('.close-nav');
         const overlay = document.getElementById('overlay');
         const navLinks = sideNav.querySelectorAll('a');
         
-        // Open side navigation
+        
         sideNavToggle.addEventListener('click', () => {
             sideNav.classList.add('open');
             overlay.classList.add('open');
         });
         
-        // Close side navigation
+        
         function closeNavigation() {
             sideNav.classList.remove('open');
             overlay.classList.remove('open');
@@ -327,7 +340,6 @@
         closeNav.addEventListener('click', closeNavigation);
         overlay.addEventListener('click', closeNavigation);
         
-        // Close navigation when a link is clicked
         navLinks.forEach(link => {
             link.addEventListener('click', closeNavigation);
         });
